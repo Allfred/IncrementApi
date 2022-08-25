@@ -1,3 +1,5 @@
+using IncrementApi.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,6 +22,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapPost("", (string str,int increment,StringIncrementService stringIncrementService) => stringIncrementService.Increment(str,increment));
 
 app.Run();
