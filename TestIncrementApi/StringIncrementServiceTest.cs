@@ -20,7 +20,10 @@ public class StringIncrementServiceTest
     [TestCase("1w10s21", 13, "1w23s34")]
     [TestCase("1w10s21r0t05", 13, "1w23s34r1t11")]
     
+    [TestCase("000", 21, "222")]
+    
     [TestCase("WORK123CODE56", 55, "WORK178CODE11")]
+    [TestCase("WORK123CODE56", 555, "WORK678CODE61")]
     
     public void Increment(string input, int increment, string expected)
     {
